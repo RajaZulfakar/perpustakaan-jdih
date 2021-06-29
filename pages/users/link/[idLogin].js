@@ -27,7 +27,7 @@ function idLogin() {
   console.log("qr data : " + qrData + " " + typeof qrData);
   if (qrData) {
     const x = qrData
-      .replace(`"`, "")
+      .slice(1, -1)
       .replace("xMl3Jk", "+")
       .replace("Por21Ld", "/")
       .replace("Ml32", "=");
