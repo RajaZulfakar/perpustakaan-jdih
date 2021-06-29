@@ -21,9 +21,10 @@ function idLogin() {
     }
   });
   // GET qrData
-  console.log(idLogin);
+  console.log(idLogin, " id Login type is : ", typeof idLogin);
 
   const qrData = JSON.stringify(idLogin.rmz);
+  console.log("qr data : " + qrData + " " + typeof qrData);
   if (qrData) {
     const x = qrData
       .replace(`"`, "")
@@ -31,8 +32,15 @@ function idLogin() {
       .replace("Por21Ld", "/")
       .replace("Ml32", "=");
     // DECRYPT link.query
+    console.log(x);
     var bytes = CryptoJS.AES.decrypt(x, "perpustakaanjdih");
+    console.log(bytes, " bytes type is : ", typeof bytes);
     var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    console.log(
+      decryptedData,
+      " decrypted Data type is : ",
+      typeof decryptedData
+    );
     // LOGIN
     if (idLogin) {
       const loginData = decryptedData.split("#");

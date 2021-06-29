@@ -137,33 +137,35 @@ function login() {
             <h3 className="text-lg font-semibold text-cyan-500 uppercase">
               Login Manual
             </h3>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="border px-2 py-1 rounded-lg"
-            />
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="border px-2 py-1 rounded-lg"
-            />
-            <div className="flex items-center">
-              <button
-                className="bg-cyan-400 mr-2 px-4 py-2 text-gray-50 font-semibold tracking-wide rounded-lg shadow-sm"
-                type="submit"
-                onClick={signIn}
-              >
-                Login
-              </button>
-              <a
-                className="text-cyan-400 text-sm underline hover:text-cyan-300"
-                href="/users/userRegister"
-              >
-                Daftar sebagai Anggota
-              </a>
-            </div>
+            <form className="flex flex-col space-y-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="border px-2 py-1 rounded-lg"
+              />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="border px-2 py-1 rounded-lg"
+              />
+              <div className="flex items-center">
+                <button
+                  className="bg-cyan-400 mr-2 px-4 py-2 text-gray-50 font-semibold tracking-wide rounded-lg shadow-sm"
+                  type="submit"
+                  onClick={signIn}
+                >
+                  Login
+                </button>
+                <a
+                  className="text-cyan-400 text-sm underline hover:text-cyan-300"
+                  href="/users/userRegister"
+                >
+                  Daftar sebagai Anggota
+                </a>
+              </div>
+            </form>
           </div>
           {/* Manual Login */}
         </div>

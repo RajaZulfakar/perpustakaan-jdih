@@ -32,7 +32,6 @@ function detailsUser() {
                 setUserMoreData(doc.data());
 
                 // FOR DOCS SEE: https://www.npmjs.com/package/crypto-js
-
                 const hashed = `${user.email}#${doc.data().hashed}`;
                 // Encrypt
                 const ciphertext = CryptoJS.AES.encrypt(
@@ -49,6 +48,7 @@ function detailsUser() {
                 const appDomain = appSplit[0] + "//" + appSplit[2];
                 const qrText =
                   appDomain + "/users/link/search?rmz=" + ciphertext;
+                console.log(`${qrText}`);
                 QRCode.toDataURL(`${qrText}`)
                   .then((url) => {
                     setQrImageUrl(url);
