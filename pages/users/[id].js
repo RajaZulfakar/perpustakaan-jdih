@@ -49,6 +49,7 @@ function detailsUser() {
                 const qrText =
                   appDomain + "/users/link/search?rmz=" + ciphertext;
                 console.log(`${qrText}`);
+                console.log("telor");
                 QRCode.toDataURL(`${qrText}`)
                   .then((url) => {
                     setQrImageUrl(url);
